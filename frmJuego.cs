@@ -17,13 +17,12 @@ namespace frmJuego
         {
             InitializeComponent();
         }
-        int x = 100;
-        int y = 100;
+        int x = 450;
+        int y = 400;
         private void frmJuego_Load(object sender, EventArgs e)
         {
             objNaveJugador = new claseNave();
             objNaveJugador.CrearJugador();
-            objNaveJugador.CrearEnemigo();
             Controls.Add(objNaveJugador.imagNave);
             objNaveJugador.imagNave.Location = new Point(x, y);
         }
@@ -41,6 +40,18 @@ namespace frmJuego
                 objNaveJugador.imagNave.Location = new Point(x, y);
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            objNaveJugador = new claseNave();
+            
+            objNaveJugador.CrearEnemigo();
+            Random xEnemigo = new Random();
+            int num = xEnemigo.Next( 50, 900);
+            objNaveJugador.imagNaveEnemigo.Location = new Point(num, 50);
+            Controls.Add(objNaveJugador.imagNaveEnemigo);
         }
     }
 }

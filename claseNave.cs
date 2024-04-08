@@ -15,6 +15,7 @@ namespace frmJuego
         string jugador;
         int daño;
         public PictureBox imagNave;
+        public PictureBox imagNaveEnemigo;
         public void CrearJugador()
         {
             vida = 100;
@@ -31,7 +32,9 @@ namespace frmJuego
             vida = 1;
             jugador = "enemigo1";
             daño = 25;
-
+            imagNaveEnemigo = new PictureBox();
+            imagNaveEnemigo.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagNaveEnemigo.ImageLocation = "https://us.123rf.com/450wm/djvstock/djvstock2005/djvstock200541513/147633639-dise%C3%B1o-de-ilustraci%C3%B3n-de-vector-de-icono-de-juego-de-nave-espacial-pixelada.jpg?ver=6";
 
         }
 
